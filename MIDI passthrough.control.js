@@ -41,10 +41,6 @@ function init() {
 // Called when a short MIDI message is received on MIDI input port 0.
 function onMidi0(status, data1, data2) {
 
-  if ((status & 0xF0) == 0x90) {
-    println("note");
-  }
-
 }
 
 // Called when a MIDI sysex message is received on MIDI input port 0.
