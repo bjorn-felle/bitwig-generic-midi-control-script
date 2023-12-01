@@ -31,7 +31,41 @@ function init() {
    transport = host.createTransport();
    var inputPort = host.getMidiInPort(0);
    inputPort.setMidiCallback(onMidi0);
-   inputPort.createNoteInput("MIDI Passthrough");
+
+   CK1  = inputPort.createNoteInput("Channel 1", "?0????");
+   CK2  = inputPort.createNoteInput("Channel 2", "?1????");
+   CK3  = inputPort.createNoteInput("Channel 3", "?2????");
+   CK4  = inputPort.createNoteInput("Channel 4", "?3????");
+   CK5  = inputPort.createNoteInput("Channel 5", "?4????");
+   CK6  = inputPort.createNoteInput("Channel 6", "?5????");
+   CK7  = inputPort.createNoteInput("Channel 7", "?6????");
+   CK8  = inputPort.createNoteInput("Channel 8", "?7????");
+   CK9  = inputPort.createNoteInput("Channel 9", "?8????");
+   CK10 = inputPort.createNoteInput("Channel 10", "?9????");
+   CK11 = inputPort.createNoteInput("Channel 11", "?A????");
+   CK12 = inputPort.createNoteInput("Channel 12", "?B????");
+   CK13 = inputPort.createNoteInput("Channel 13", "?C????");
+   CK14 = inputPort.createNoteInput("Channel 14", "?D????");
+   CK15 = inputPort.createNoteInput("Channel 15", "?E????");
+   CK16 = inputPort.createNoteInput("Channel 16", "?F????");
+
+   CK1.setShouldConsumeEvents(false);
+   CK2.setShouldConsumeEvents(false);
+   CK3.setShouldConsumeEvents(false);
+   CK4.setShouldConsumeEvents(false);
+   CK5.setShouldConsumeEvents(false);
+   CK6.setShouldConsumeEvents(false);
+   CK7.setShouldConsumeEvents(false);
+   CK8.setShouldConsumeEvents(false);
+   CK9.setShouldConsumeEvents(false);
+   CK10.setShouldConsumeEvents(false);
+   CK11.setShouldConsumeEvents(false);
+   CK12.setShouldConsumeEvents(false);
+   CK13.setShouldConsumeEvents(false);
+   CK14.setShouldConsumeEvents(false);
+   CK15.setShouldConsumeEvents(false);
+   CK16.setShouldConsumeEvents(false);
+
    host.getMidiInPort(0).setSysexCallback(onSysex0);
 
    // TODO: Perform further initialization here.
