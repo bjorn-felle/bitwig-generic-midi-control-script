@@ -29,7 +29,9 @@ else if (host.platformIsLinux())
 
 function init() {
    transport = host.createTransport();
-   host.getMidiInPort(0).setMidiCallback(onMidi0);
+   var inputPort = host.getMidiInPort(0);
+   inputPort.setMidiCallback(onMidi0);
+   inputPort.createNoteInput("MIDI Passthrough");
    host.getMidiInPort(0).setSysexCallback(onSysex0);
 
    // TODO: Perform further initialization here.
@@ -38,7 +40,11 @@ function init() {
 
 // Called when a short MIDI message is received on MIDI input port 0.
 function onMidi0(status, data1, data2) {
-   // TODO: Implement your MIDI input handling code here.
+
+  if ((status & 0xF0) == 0x90) {
+    println("note");
+  }
+
 }
 
 // Called when a MIDI sysex message is received on MIDI input port 0.
